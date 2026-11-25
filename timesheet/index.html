@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="/timesheet/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="MVI BR - ACS Engenharia: registro de horas trabalhadas das Engenharias Mecânica, Elétrica e Qualidade.">
+  <!-- © 2026 Carlos Henrique Bresio. Todos os direitos reservados. Proibida a cópia, reprodução, engenharia
+       reversa ou uso deste software, no todo ou em parte, sem autorização por escrito do autor. -->
+  <meta name="author" content="Carlos Henrique Bresio">
+  <meta name="copyright" content="© 2026 Carlos Henrique Bresio. Todos os direitos reservados.">
+
+  <!-- iOS meta tags & icons: "Adicionar à Tela de Início" no iPhone abre em tela cheia, como um app -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="theme-color" content="#0E2A47">
+  <meta name="apple-mobile-web-app-title" content="MVI BR">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>MVI BR - ACS Engenharia</title>
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Tela de abertura enquanto o app carrega (no iPhone, sem ela aparecia uma tela branca de 2 a 3 s). -->
+  <style>
+    html, body { margin: 0; height: 100%; background: #0E2A47; }
+    #abertura {
+      position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 18px; background: linear-gradient(135deg, #0E2A47, #173A5E); color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; transition: opacity .3s;
+    }
+    #abertura img { width: 112px; height: 112px; border-radius: 26px; }
+    #abertura .nome { font-size: 20px; font-weight: 700; }
+    #abertura .areas { font-size: 13px; color: #C9D4E2; }
+    #abertura .barra { width: 120px; height: 3px; border-radius: 3px; background: rgba(255,255,255,.2); overflow: hidden; }
+    #abertura .barra::after {
+      content: ""; display: block; width: 40%; height: 100%; background: #fff; border-radius: 3px;
+      animation: carrega 1.1s ease-in-out infinite;
+    }
+    @keyframes carrega { 0% { transform: translateX(-100%); } 100% { transform: translateX(300%); } }
+  </style>
+</head>
+<body>
+  <div id="abertura">
+    <img src="icons/Icon-192.png" alt="">
+    <div class="nome">MVI BR - ACS Engenharia</div>
+    <div class="areas">Engenharias Mecânica, Elétrica e Qualidade</div>
+    <div class="barra"></div>
+  </div>
+  <script>
+    // Some quando o Flutter desenha a primeira tela.
+    window.addEventListener('flutter-first-frame', function () {
+      var a = document.getElementById('abertura');
+      if (!a) return;
+      a.style.opacity = '0';
+      setTimeout(function () { a.remove(); }, 300);
+    });
+  </script>
+  <!--
+    You can customize the "flutter_bootstrap.js" script.
+    This is useful to provide a custom configuration to the Flutter loader
+    or to give the user feedback during the initialization process.
+
+    For more details:
+    * https://docs.flutter.dev/platform-integration/web/initialization
+  -->
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>

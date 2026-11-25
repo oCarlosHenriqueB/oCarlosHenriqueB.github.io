@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!-- Raiz de https://ocarloshenriqueb.github.io/: leva para o app em /timesheet/.
+     Copiado pelo workflow .github/workflows/pages.yml a cada publicação (não editar no repositório do site). -->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MVI BR - ACS Engenharia</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" href="/timesheet/favicon.png">
+  <link rel="apple-touch-icon" href="/timesheet/icons/apple-touch-icon.png">
+  <script>location.replace('/timesheet/' + location.search + location.hash);</script>
+  <meta http-equiv="refresh" content="0; url=/timesheet/">
+  <style>
+    body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+           font-family: system-ui, sans-serif; background: #0E2A47; color: #fff; }
+    a { color: #fff; font-size: 18px; }
+  </style>
+</head>
+<body>
+  <a id="abrir" href="/timesheet/">Abrir o Timesheet</a>
+  <script>document.getElementById('abrir').href = '/timesheet/' + location.search + location.hash;</script>
+</body>
+</html>
